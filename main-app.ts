@@ -2,7 +2,7 @@ import { DsStack } from "./ds-stack"
 import { DsQueue } from "./ds-queue"
 import { DsLinkedListNode, DsLinkedList } from "./ds-linkedlist"
 import { DsBSTNode, DsBST } from "./ds-bst"
-import { DsGraphNode, DsGraph } from "./ds-graph"
+import { DsGraphNode, DsGraphArray, DsGraphMap } from "./ds-graph"
 
 import * as Algorithms from "./al-generic"
 
@@ -30,9 +30,9 @@ let stackQueue1 = new StackQueue();
 stackQueue1.push();
 stackQueue1.isEmpty();
 
-let queue = new DsQueue();
-queue.enqueue(5);
-var checkVal = queue.dequeue();
+//let queue = new DsQueue();
+//queue.enqueue(5);
+//var checkVal = queue.dequeue();
 
 let algosLinkedLists = new Algorithms.LinkedListProblems();
 
@@ -79,8 +79,15 @@ bst.add(bstNode3);
 
 bst.traverse();
 
-let graph1 = new DsGraph();
+let graph1 = new DsGraphMap();
 let graphNode1 = new DsGraphNode();
+graphNode1.id = 1;
+graphNode1.data = 4545;
 let graphNode2 = new DsGraphNode();
-let graphNode3 = new DsGraphNode();
-let graphNode4 = new DsGraphNode();
+graphNode2.id = 2;
+graphNode2.data = 6565;
+
+graph1.addVertex(graphNode1);
+graph1.addVertex(graphNode2);
+graph1.addEdge(graphNode1, graphNode2);
+graph1.printAllVertices();
