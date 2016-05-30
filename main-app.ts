@@ -36,18 +36,22 @@ stackQueue1.isEmpty();
 
 let algosLinkedLists = new Algorithms.LinkedListProblems();
 
-let firstNode = new DsLinkedListNode();
-firstNode.data = 1;
-firstNode.next = null;
-let secondNode = new DsLinkedListNode();
-secondNode.data = 2;
-secondNode.next = null;
-let thirdNode = new DsLinkedListNode();
-thirdNode.data = 1;
-thirdNode.next = null;
+let firstNode = new DsLinkedListNode(1, null);
+let secondNode = new DsLinkedListNode(2, null);
+let thirdNode = new DsLinkedListNode(3, null);
 
-secondNode.next = thirdNode;
-firstNode.next = secondNode;
+let newll = new DsLinkedList(firstNode);
+newll.addAtFirst(secondNode);
+newll.addAtFirst(thirdNode);
+//secondNode.next = thirdNode;
+//firstNode.next = secondNode;
+
+let firstNodeB = new DsLinkedListNode(4, null);
+let secondNodeB = new DsLinkedListNode(5, null);
+let thirdNodeB = new DsLinkedListNode(6, null);
+let newllB = new DsLinkedList(firstNodeB);
+newllB.addAtLast(secondNodeB);
+newllB.addAtLast(thirdNodeB);
 
 var isPalindrome = algosLinkedLists.isPalindrome(firstNode);
 console.log(isPalindrome);

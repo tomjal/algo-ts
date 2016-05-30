@@ -9,8 +9,9 @@ interface ILinkedListNode {
 export class DsLinkedListNode implements ILinkedListNode {
     public data: any;
     public next: ILinkedListNode;
-    constructor() {
-
+    constructor(data, next) {
+        this.data = data;
+        this.next = next;
     }
 }
 
@@ -33,14 +34,27 @@ export class DsLinkedList implements ILinkedList {
     constructor(firstNode: ILinkedListNode) {
         this.head = firstNode;
     }
-    addAtLast(any) {
-
+    addAtLast(newNode: ILinkedListNode) {
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+            let curr = this.head;
+            while (curr.next != null) {
+                curr = curr.next;
+            }
+            curr.next = newNode;
+        }
     }
     removeAtLast() {
 
     }
-    addAtFirst(any) {
-
+    addAtFirst(newNode: ILinkedListNode) {
+        if (this.head.data == null) {
+            this.head = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
     }
     removeAtFirst() {
 

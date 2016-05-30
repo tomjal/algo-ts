@@ -1,1 +1,1 @@
-import { DsGraph, DsGraphNode } from "./ds-graph"
+import { DsGraphArray, DsGraphMap, DsGraphNode } from "./ds-graph"
